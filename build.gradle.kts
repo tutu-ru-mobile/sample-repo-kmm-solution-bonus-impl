@@ -21,7 +21,6 @@ kotlin {
                 api(project(":solution-bonus-api"))
                 api(project(":solution-ab-api"))
                 implementation(project(":lib-basic"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION")
             }
         }
         val commonTest by getting {
