@@ -9,7 +9,7 @@ import com.sample.compose.WrapColorBox
 
 class SolutionBonusAndroidImpl(
     val common: SolutionBonusImpl
-) : SolutionBonusApiAndroid {
+) : SolutionBonusAndroidApi {
 
     @Composable
     override fun renderBonusesAndRefillButton() {
