@@ -42,6 +42,9 @@ kotlin {
         }
         val iOSMain by getting
         val iOSTest by getting
+        val jvmMain by getting {
+            addJvmSourceDirs()
+        }
     }
 }
 
