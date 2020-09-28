@@ -1,5 +1,6 @@
 package com.sample
 
+import kotlinx.coroutines.delay
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -26,22 +27,31 @@ class SolutionBonusImplTest {
 
     @Test
     fun testCalcDiscount() {
-        val solutionBonus = createSolutionBonusImpl()
-        assertEquals(400, solutionBonus.calcDiscount(Ticket(1000, "")))
+        testCoroutine {
+            val solutionBonus = createSolutionBonusImpl()
+            delay(10)
+            assertEquals(400, solutionBonus.calcDiscount(Ticket(1000, "")))
+        }
     }
 
     @Test
     fun testSpendBonuses() {
-        val solutionBonus = createSolutionBonusImpl()
-        solutionBonus.spendBonuses(Ticket(1000, ""))
-        assertEquals(600, solutionBonus.getBonusesAmount())
+        testCoroutine {
+            val solutionBonus = createSolutionBonusImpl()
+            solutionBonus.spendBonuses(Ticket(1000, ""))
+            delay(10)
+            assertEquals(600, solutionBonus.getBonusesAmount())
+        }
     }
 
     @Test
     fun testRefundTicket() {
-        val solutionBonus = createSolutionBonusImpl()
-        solutionBonus.refundTicket(Ticket(1000, ""))
-        assertEquals(1900, solutionBonus.getBonusesAmount())
+        testCoroutine {
+            val solutionBonus = createSolutionBonusImpl()
+            solutionBonus.refundTicket(Ticket(1000, ""))
+            delay(10)
+            assertEquals(1900, solutionBonus.getBonusesAmount())
+        }
     }
 
 }
