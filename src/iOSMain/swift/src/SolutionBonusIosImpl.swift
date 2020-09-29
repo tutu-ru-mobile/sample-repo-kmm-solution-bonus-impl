@@ -21,7 +21,7 @@ public struct SolutionBonusIosImpl: SolutionBonusIosApi {
                 VStack {
                     _renderBonusCount()
                     Button("Добавить бонусы") {
-                        self.common.addBonuses(amount: 1000)
+                        self.common.actionAddBonuses(amount: 1000)
                     }
                 }.colorRect(color: common.getColor(), available: common.isAvailable())
             }

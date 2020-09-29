@@ -96,6 +96,6 @@ class SolutionBonusImpl(
     fun getBonusRules(): String = "Бонусами можно оплатить не более 40% стоимости билета"
     fun getState() = store.state
     fun actionSwitchBuyToggle() = store.send(Action.SwitchBuyToggle())
-    fun addBonuses(amount: Int) = store.send(Action.Add(amount))
+    fun actionAddBonuses(amount: Int) = store.send(Action.Add(amount))
 
 }
